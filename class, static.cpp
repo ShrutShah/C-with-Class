@@ -15,11 +15,15 @@ class example{
      cout<<"a: "<<a<<endl<<"b: "<<b<<endl<<"c: "<<c<<endl; 
      count++;
      cout<<"count: "<<count<<endl;
+
+  static void get_count(){
+    //Only static member methods can be used in static functions.
+    cout<<"count: "<<count<<endl;
     
   }
 };
 
-// by default value is 0 for static variables;
+//By default value is 0 for static variables;
 
 int example:: count;
 int main() {
@@ -32,6 +36,9 @@ int main() {
     e2.d = 6;
     cout<<"d: "<<e2.d<<endl;
     e2.get_data(1,2,3);
+
+    //Static can be called using directly class and ::
+  example :: get_count();
     
     return 0;
 }
